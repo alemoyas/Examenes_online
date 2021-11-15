@@ -1,7 +1,7 @@
 
 <?php
     $url_exa = $_GET['url_exa'];
-    echo ($url_exa);
+    //echo ($url_exa);
 ?>
 <!DOCTYPE html>
 <html lang="en">
