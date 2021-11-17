@@ -24,10 +24,6 @@
             <input type="file" name="mi_imagen">
         </li>
         <li>
-            <label for="id_imagen">Ingrese id de la imegen</label>
-            <input type="text" name="id_imagen">
-        </li>
-        <li>
             <label for="rut_ingresado">Ingrese rut</label>
             <input type="text" name="rut_ingresado">
         </li>
@@ -44,7 +40,6 @@
     
         //informacion sobre el post que acavo de hacer, solo si estan lleno los campos
     if (isset($_POST['submit']) && isset($_FILES['mi_imagen'])){
-        //include "con_db_cli.php";
 
         //include "db_conn.php";
         //echo "<pre>";
@@ -58,29 +53,16 @@
         
         
         $img_nombre = $_FILES['mi_imagen']['name'];
-        $id_imagen = $_REQUEST['id_imagen'];
         //$img_tamano = $_FILES['my_image']['size'];
         $tmp_nombre = $_FILES['mi_imagen']['tmp_name'];
         $info_exa = $_REQUEST['info_exa'];
         $rut = $_REQUEST['rut_ingresado'];
 
+        //funcion, extencion del archivo
         $img_ex = pathinfo($img_nombre, PATHINFO_EXTENSION);
 		$img_ex_minus = strtolower($img_ex);
-
-        echo "<br>";
-
-        echo($img_nombre);
-        echo "<br>";
-        echo($id_imagen);
-        echo "<br>";
-        echo($tmp_nombre);
-        echo "<br>";
-        echo($info_exa);
-        echo "<br>";
-        echo($rut);
-        echo "<br>";
-        echo($img_ex_minus);
-        
+     
+        //tipo de archivos permitidos
         $tipo_ext_permitidos = array("jpg", "jpeg", "png", "pdf"); 
 
 			if (in_array($img_ex_minus, $tipo_ext_permitidos)) {
@@ -100,13 +82,14 @@
 
 
                 $data = [
-                    'id' => $id_imagen,
+                    //'id' => $id_imagen,
                     'examen_url' => $nuevo_nombre_imagen,
                     'cliente_rut' => $rut,
                     'info' => $info_exa
                 ];
                 
-                $consulta = "INSERT INTO examen (id, examen_url, cliente_rut, info) VALUES (:id, :examen_url, :cliente_rut, :info)";
+                //ojo aqui id es autoincrement
+                $consulta = "INSERT INTO examen (examen_url, cliente_rut, info) VALUES ( :examen_url, :cliente_rut, :info)";
                 $stmt= $conexion->prepare($consulta);
                 $stmt->execute($data);
 
@@ -119,7 +102,7 @@
 
             }else{
                 $me = "No puedes ingresar archivos de este tipo";
-		        header("Location: index.php?error=$em");
+		        header("Location: pantalla_error.php?error=$em");
             }
             
 

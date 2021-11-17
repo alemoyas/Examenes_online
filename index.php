@@ -1,10 +1,12 @@
 <?php
     session_start();
     if(isset($_GET['rut']) && ($_GET['pass'])) {
+
         $rut = $_GET["rut"];
         $pass   = $_GET["pass"];
+        
 
-
+        //conexion pdo sql
         include_once 'conexion_pdo.php';
         $objeto = new Conexion();
         $conexion = $objeto->Conectar();    
@@ -14,26 +16,33 @@
         $resultado->execute();
         $credenciales=$resultado->fetchAll(PDO::FETCH_ASSOC);
             
-            
-        //print_r($credenciales[0]);
-        //$rut = $credenciales['rut'];
-            
+        
+        //asignando resultados de la queary
+        $prig = $credenciales[0]['permiso'];
+
 
         //verificando si la contraseña es correcta
-        if($pass = $credenciales[0]['passw']){
-            $_SESSION['login'] = $rut;
-            $url = "menu.php";
-            header('Location: ' . $url);
+        if($pass == $credenciales[0]['passw']){
+            //se hace la validacion si es admin o no.
+            switch ($prig) {
+                case $prig == 1:
+                    $_SESSION['login'] = $rut;
+                    $url = "menu_admin.php";
+                    header('Location: ' . $url);
+                    break;
+                default:
+                    $_SESSION['login'] = $rut;
+                    $url = "menu.php";
+                    header('Location: ' . $url);
+            }
             
         }else{
-            echo "a";
+            $me = "Contraseña incorrecta";
+            header("Location: pantalla_error.php?error=$me");
         }
 
-        //$rut = $credenciales[0]['rut'];
-        //$pass = $credenciales[0]['password'];
-        //$permiso = $credenciales[0]['permiso'];
-        //Login
-            
+
+        
 
             
     }
@@ -53,6 +62,7 @@
         <input type="text" placeholder="&#128273; rut" name="rut" required>
         <input type="password" placeholder="&#128274; password" name="pass" required>
         <input type="submit" value="Ingresar" name="btningresar">
+        
     </form>
 
 	
