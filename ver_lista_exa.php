@@ -32,6 +32,9 @@
                 background: linear-gradient(to right, #0575E6, #00F260);
                 color:white;
             }
+            body {
+                background-color: #444455;
+            }
         </style>  
         
     </head>

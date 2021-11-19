@@ -10,8 +10,31 @@
 			align-items: center;
 			flex-direction: column;
 			min-height: 100vh;
+            border: 4px solid lightblue;
+            background-color: blue;
+            
 		}
+        ul {
+            list-style: none;
 
+        }
+        form {
+            margin: 20px ;
+            border: 4px solid black;
+            background-color: lightblue;
+        }
+        li {
+            margin: 10px;
+        }
+        input {
+            margin-bottom: 5px;
+            
+        }
+        #enviar {
+            margin-left: 50px;
+            width:30%;
+            margin-bottom: 10px;
+        }
 	</style>
 </head>
 <body>
