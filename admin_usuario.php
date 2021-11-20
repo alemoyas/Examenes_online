@@ -11,14 +11,16 @@
     <h2>Ingresar cuenta</h2>
         <ul>
             <li>
-                <label for="rut">rut</label>
-                <input type="text" name="rut">
+                <label for="rut">Rut</label>
+                <input type="text" name="rut" placeholder="ingrese rut de la nueva cuenta">
             </li>
             <li>
-                <label for="contrasena">contrasena</label>
-                <input type="text" name="contrasena">
+                <label for="contrasena">contraseña</label>
+                <input type="text" name="contrasena" placeholder="ingrese contrasena de la nueva cuenta">
             </li>
             <li>
+            <label for="privg">privilegios</label>
+            <br>
                 <select name="privg" id="privg">
                     <option value="2">Normal</option>
                     <option value="1">Admin</option>

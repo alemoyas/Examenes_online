@@ -35,13 +35,14 @@
             body {
                 background-color: #444455;
             }
+           
         </style>  
         
     </head>
     <body>
-        <h1 class="text-center">examenes</h1>
+        <h1 class="text-center">Exámenes</h1>
         
-        <h3 class="text-center">Clistado de examenes</h3>
+        <h3 class="text-center">Listado de exámenes</h3>
         
         <div class="container">
         <div class="row">

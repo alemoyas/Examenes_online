@@ -1,7 +1,7 @@
 
 <?php
     $url_exa = $_GET['url_exa'];
-    echo ($url_exa);
+    //echo ($url_exa);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="cuadro">
-        <img src="examenes/<?=$url_exa?>" style="max-width: 250px; max-height:250px">
+        <img src="examenes/<?=$url_exa?>" style="width: 750px; height:750px; margin-left:340px">
     </div>
 </body>
 </html>

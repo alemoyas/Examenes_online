@@ -8,12 +8,16 @@
 <html>
 <head>
 	<title>eleccion</title>
-	<style>
-	</style>
+    <link rel="stylesheet" type="text/css" href="estilos.css"> 
+	
 </head>
 <body>
-    <a href="ver_lista_exa.php">ver examen por rut (lista)</a>
+    <form>
+        <ul class="pruebadatos">
+    <a class="amenu" href="ver_lista_exa.php"><li class="limenu">Ver examen por rut (lista)</li></a>
     <p>      </p>
+        </ul>
+    </form>
     
     
     

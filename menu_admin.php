@@ -8,13 +8,14 @@
 <html>
 <head>
 	<title>eleccion</title>
-	<style>
-	</style>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
-<body>
-    <a href="ver_lista_exa.php">ver examen por rut (lista)</a>
-    <p>      </p>
-    <a href="admin_index.php">admin</a>
-    
+<body class="menuadmin">
+<form class="formadmin">
+    <ul>
+    <a href="ver_lista_exa.php"><li class="limenuadmin">Ver examen por Rut (list)</li></a>
+    <a href="admin_index.php"><li class="limenuadmin">Admin</li></a>
+    <ul>
+    </form>
 </body>
 </html>

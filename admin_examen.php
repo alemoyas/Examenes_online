@@ -10,12 +10,13 @@
 			align-items: center;
 			flex-direction: column;
 			min-height: 100vh;
-            border: 4px solid lightblue;
+            
             background-color: blue;
             
 		}
         ul {
             list-style: none;
+            margin: 30px;
 
         }
         form {
@@ -31,9 +32,9 @@
             
         }
         #enviar {
-            margin-left: 50px;
+            margin-left: 70px;
             width:30%;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
         }
 	</style>
 </head>
@@ -56,7 +57,7 @@
         </li>
     </ul>
     
-    <input type="submit" name="submit" value="Subir">
+    <input type="submit" id="enviar" name="submit" value="Subir">
     
 
     <?php
