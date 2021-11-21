@@ -10,10 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
-    <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
-    <h1><?php echo($error)?></h1>
+    
+<body style="background-color: #ff9222;">
+    <h1 style="font-family: 'Courier New', Courier, monospace;"><?php echo($error)?></h1>
     
 </body>
 </html>
